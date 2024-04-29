@@ -66,6 +66,68 @@
   }
 }
 
+
+
+
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-animated-bg {
+  .navbar-animated-bg {
+    background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Light white border for subtle edge */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect behind the navbar */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background: linear-gradient(to right, rgba(234, 234, 234, 0.5), rgba(219, 219, 219, 0.5), rgba(242, 242, 242, 0.5), rgba(173, 169, 150, 0.5));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+}
+
+
+/* Landing Styles */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to start of the container */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Ensure text within the elements is centered */
+  width: 100vw;
+  height: 100vh;
+  margin-top: 10vh;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.header {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.subheader {
+  font-size: 1.5rem;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+
 @layer components {
   section {
     display: flex;
@@ -77,10 +139,8 @@
     height: 300vh;
     overflow: hidden; /* Optional, prevents scroll within the section */
     background: #000000;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /* Prevents scroll inside the section */
   }
 }
@@ -88,11 +148,11 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 h1 {
   color: white; /* Sets the text color to white */
-  font-size: 2.5rem; /* Sets a larger font size */
+  font-size: 4rem; /* Sets a larger font size */
   font-weight: 700; /* Makes the font bold */
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds shadow for better readability */
   text-align: center; /* Centers the text */
-  margin-top: 2rem; /* Adds space above the h1 */
+  margin-top: 10vh; /* Adds space above the h1 */
   margin-bottom: 1rem; /* Adds space below the h1 */
 }
 
