@@ -1,46 +1,44 @@
-'use client'
+import React, { useEffect, useRef } from 'react';
+import { animated, useSpring } from '@react-spring/web';
+import useOnScreen from '../utils/ScrollContext';
 
-import React, { useEffect } from 'react';
-import { animated, useSpring, SpringValues } from '@react-spring/web';
-
-// Updated to new syntax for client-side execution
-
-// Define interface for animation
-
+// Define interface for animation styles
 interface AnimatedStyles {
     opacity: number;
     transform: string;
 }
 
 const Landing: React.FC = () => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isVisible = useOnScreen(ref);
+
     // Define the animation using useSpring
-    const [styles, api] = useSpring<AnimatedStyles>(() => {
-        console.log('setting up animations');
-        return{
-            from: { opacity: 1, transform: 'translateY(-20px)' },
-            to: { opacity: 0, transform: 'translateY(0)' },
-            config: { duration: 1000 }
-        };
-    });
+    const [styles, api] = useSpring<AnimatedStyles>(() => ({
+        from: { opacity: 1, transform: 'translateY(-20px)' },
+        to: { opacity: 1, transform: 'translateY(0)' },
+        config: { duration: 2000 }
+    }));
 
-    // Reset the animation every time this component mounts
+    // Reset the animation every time the visibility changes
     useEffect(() => {
-        console.log('Attempting to start animation.');
-        api.start();
-    }, [api]);
+        if (isVisible) {
+            console.log('Attempting to start animation.');
+            api.start();
+        }
+    }, [api, isVisible]); // Depend on isVisible to trigger animation when element is visible
 
-    
     return (
-        <div className='landing' style={{ position: 'relative', height: '100vh' }}>
+        <div ref={ref} className={`landing ${isVisible ? 'fade-in' : ''}`} style={{ position: 'relative', height: '100vh' }}>
             <animated.h1 style={styles} className='header'>
-                I am a Full Stack Developer and ...
+                I'm Max, a Full Stack Developer.
             </animated.h1>
             <animated.p style={styles} className='subheader'>
-                ....
+                 And I want to show you how i learn.
             </animated.p>
+        
             <div className='LandingText'>
                 <animated.h1 style={styles} className='header'>
-                    This was built using NextJs
+                    This was built using NextJs.
                 </animated.h1>
             </div>
         </div>
