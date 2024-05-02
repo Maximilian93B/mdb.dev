@@ -3,6 +3,16 @@ import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
+import ProjectCards from './Card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+
 
 
 const Projects: React.FC = () => {
@@ -20,8 +30,28 @@ const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay:
 
   return (
     <section id="projects">
-     <animated.h1 ref={headerRef} style={headerStyles}>What are we Going To Put Here?</animated.h1>
-      <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Really...</animated.p>
+     <animated.h1 ref={headerRef} style={headerStyles}> Explore my Apps & Projects </animated.h1>
+      <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Code,Code,Code</animated.p>
+    
+      <Carousel className='carousel'>
+      <CarouselContent className='carousel-content'>
+        <CarouselItem className='carousel-item'>
+          <ProjectCards/>
+        </CarouselItem>
+        <CarouselItem className='carousel-item'>
+        <ProjectCards/>
+        </CarouselItem>
+        <CarouselItem className='carousel-item'>
+        <ProjectCards/>
+        </CarouselItem>
+      </CarouselContent>
+        <CarouselPrevious className='carousel-prev'/>
+        <CarouselNext className='carousel-next'/>
+      </Carousel>
+
+    
+    
+
     </section>
   );
 };

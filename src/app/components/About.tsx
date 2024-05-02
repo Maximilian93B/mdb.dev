@@ -2,6 +2,17 @@ import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
+import { Button } from "@/components/ui/button"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
 
 const About: React.FC = () => {
   // Refs for each element
@@ -17,9 +28,28 @@ const About: React.FC = () => {
   const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay: 600 });
 
   return (
-    <section id="about">
-      <animated.h1 ref={headerRef} style={headerStyles}>Learn with Me</animated.h1>
-      <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Here's something about me...</animated.p>
+    <section className='section' id="about">
+      <animated.h1 ref={headerRef} style={headerStyles}>Learn About me</animated.h1>
+      <animated.p ref={subheaderRef} style={subheaderStyles} className='about-p'> 
+      As a Full Stack Developer, my approach to software development is driven by my life's experiences and passion for creating
+      and innovating. I draw on my military background with leadership that blends with technical ability. I excel in collaborative,
+      tight-knit team environments, where I can display my problem-solving skills, communication, and adaptability.
+      </animated.p>
+      {/*Drawer component */}
+      <Drawer>
+      <DrawerTrigger className="drawer-trigger">Try Me</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>This is called a drawer component</DrawerTitle>
+          <DrawerDescription>It can be used to display data , profiles, really whatever you can think of.</DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose>
+            <Button variant="outline">Close Me</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
     </section>
   );
 };

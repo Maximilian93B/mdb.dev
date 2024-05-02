@@ -1,30 +1,36 @@
 'use client'
 
 import React, { useRef } from 'react';
-import NavBar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Landing from './components/Landing';
-import useOnScreen from './utils/ScrollContext';
+import { Parallax, ParallaxLayer, } from '@react-spring/parallax'
 import './globals.css'
 
 // This line allows NextJs to execute all child components of our 'Home' component on the client side to handle animations etc.. 
 const Home: React.FC = () => {
+  const parralax = useRef(null)
 
   // Set ref for scrolling 
-const ref = useRef<HTMLDivElement>(null);
 // Set our custome hook for the scroll effect 
-const isVisible = useOnScreen(ref);
+
 
   return (
-    <div>
-   
-      <Landing />
-      <About />
-      <Projects />
-      <Skills />
-    </div>
+    <Parallax ref={parralax} pages={4} style={{ width: '100vw', height: '200vh' }} className="background-style">
+     <ParallaxLayer offset={0} speed={0.5} className="background-style">
+        <Landing />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={0.5} className="background-style">
+        <About />
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={0.5} className="background-style">
+        <Projects />
+      </ParallaxLayer>
+      <ParallaxLayer offset={3} speed={0.5} className="background-style">
+        <Skills />
+      </ParallaxLayer>
+    </Parallax>
   );
 };
 
