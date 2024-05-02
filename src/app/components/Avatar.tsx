@@ -4,7 +4,7 @@ import Avatar from '../../../public/MyAvatar.svg';
 
 
 const MyAvatar: React.FC = () => (
-    <Image src={Avatar} alt="Profile Picture" width={500} height={100} />
+    <Image src={Avatar} alt="Profile Picture" width={1000} height={100} />
   );
   
 

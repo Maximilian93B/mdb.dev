@@ -17,7 +17,7 @@ const Home: React.FC = () => {
 
 
   return (
-    <Parallax ref={parralax} pages={4} style={{ width: '100vw', height: '200vh' }} className="background-style">
+    <Parallax ref={parralax} pages={4} style={{ width: '100vw', height: '100vh' }} className="background-style">
      <ParallaxLayer offset={0} speed={0.5} className="background-style">
         <Landing />
       </ParallaxLayer>

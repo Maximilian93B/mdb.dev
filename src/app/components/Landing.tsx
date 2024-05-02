@@ -30,12 +30,9 @@ const Landing: React.FC = () => {
 
     return (
         <div ref={ref} className={`landing ${isVisible ? 'fade-in' : ''}`} style={{ position: 'relative', height: '100vh' }}>
-            <animated.h1 style={styles} className='header'>
+            <animated.h1 style={styles}>
                 I'm Max, a Full Stack Developer.
             </animated.h1>
-            <animated.p style={styles} className='subheader'>
-                this is my portfolio
-            </animated.p>
         
             <div className='LandingText'>
                 <animated.h1 style={styles} className='header'>
@@ -43,8 +40,8 @@ const Landing: React.FC = () => {
                 </animated.h1>
             </div>
 
-            <div>
-                <MyAvatar/>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '50vh', }}>
+                <MyAvatar />
             </div>
         </div>
     );
