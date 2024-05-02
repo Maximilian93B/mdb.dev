@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { animated, useSpring } from '@react-spring/web';
 import useOnScreen from '../utils/ScrollContext';
-
+import MyAvatar from './Avatar';
 // Define interface for animation styles
 interface AnimatedStyles {
     opacity: number;
@@ -25,6 +25,7 @@ const Landing: React.FC = () => {
             console.log('Attempting to start animation.');
             api.start();
         }
+        console.log('Animation triggered')
     }, [api, isVisible]); // Depend on isVisible to trigger animation when element is visible
 
     return (
@@ -33,13 +34,17 @@ const Landing: React.FC = () => {
                 I'm Max, a Full Stack Developer.
             </animated.h1>
             <animated.p style={styles} className='subheader'>
-                 And I want to show you how i learn.
+                this is my portfolio
             </animated.p>
         
             <div className='LandingText'>
                 <animated.h1 style={styles} className='header'>
                     This was built using NextJs.
                 </animated.h1>
+            </div>
+
+            <div>
+                <MyAvatar/>
             </div>
         </div>
     );
