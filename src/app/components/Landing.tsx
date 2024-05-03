@@ -29,7 +29,7 @@ const Landing: React.FC = () => {
     // Reset the animation every time the visibility changes
     useEffect(() => {
         if (isVisible) {
-            console.log('Attempting to start animation.');
+         console.log('Attempting to start animation.');
         }
         console.log('Animation triggered')
     }, [isVisible]);
@@ -37,16 +37,18 @@ const Landing: React.FC = () => {
     return (
         <div ref={ref} className={`landing ${isVisible ? 'fade-in' : ''}`} style={{ position: 'relative', height: '100vh' }}>
            <h1>
-            I'm <AnimatedText text='Max' color='blue' delay={400} /> a <AnimatedText text='Full Stack Developer' color='green' delay={900} /><div className=""></div>
+           <AnimatedText text='Hey' color='blue' delay={400} />I'm <AnimatedText text='Max' color='green' delay={600} /><div></div>
            </h1>
-    
+           <h1>
+            a <AnimatedText text='Full Stack Developer' color='blue' delay={900} />
+           </h1>
             <div className='LandingText'>
                 <h1>
-                    This was built using <AnimatedText text='NextJs' color='red' delay={1400} />  
+                    This was built using <AnimatedText text='NextJs' color='red' delay={1200} />  
                 </h1>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', height: '60vh', width: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', height: '54vh', width: '100%' }}>
                 <MyAvatar />
             </div>
         </div>

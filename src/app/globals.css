@@ -111,11 +111,9 @@
   
   .background-style {
     width: 100%;
-    height: 100%;  
+    height: 100%; 
   }
   
-
-
   /* Landing Styles */
   .landing {
     display: flex;
@@ -128,7 +126,7 @@
     padding: 1rem 0;
   }
   
-  
+
   .header {
     font-size: 4rem;
     font-weight: bold;

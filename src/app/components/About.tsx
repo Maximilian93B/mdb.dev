@@ -3,16 +3,10 @@ import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
 import { Button } from "@/components/ui/button"
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger,} from "@/components/ui/drawer"
+
+
+
 
 const About: React.FC = () => {
   // Refs for each element
@@ -28,12 +22,10 @@ const About: React.FC = () => {
   const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay: 600 });
 
   return (
-    <section className='section' id="about">
-      <animated.h1 ref={headerRef} style={headerStyles}>Learn About me</animated.h1>
+    <section className='section' id='about'>
+      <animated.h1 ref={headerRef} style={headerStyles}>Why Build this ?</animated.h1>
       <animated.p ref={subheaderRef} style={subheaderStyles} className='about-p'> 
-      As a Full Stack Developer, my approach to software development is driven by my life's experiences and passion for creating
-      and innovating. I draw on my military background with leadership that blends with technical ability. I excel in collaborative,
-      tight-knit team environments, where I can display my problem-solving skills, communication, and adaptability.
+      As a Full Stack Developer, I am always trying to learn and improve & NextJS is #1 on my list. Building a portfolio seemed like the right thing to do start. 
       </animated.p>
       {/*Drawer component */}
       <Drawer>
@@ -41,7 +33,7 @@ const About: React.FC = () => {
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>This is called a drawer component</DrawerTitle>
-          <DrawerDescription>It can be used to display data , profiles, really whatever you can think of.</DrawerDescription>
+          <DrawerDescription>Something here</DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
           <DrawerClose>
