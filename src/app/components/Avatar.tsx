@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useSpring, animated } from 'react-spring';
 import Image from 'next/image';
-import Avatar from '../../../public/MyAvatar.svg';
+import Pointer from '../../../public/Pointer.svg';
 
+const MyPointer: React.FC = () => {
+    const avatarRef = useRef<HTMLDivElement>(null);
 
-const MyAvatar: React.FC = () => (
-    <Image src={Avatar} alt="Profile Picture" width={900} height={100} />
-  );
-  
+    // Bounce animation using useSpring
+    const animationProps = useSpring({
+        to: async (next, cancel) => {
+            while (1) {
+                await next({ transform: 'scale(1.1)', opacity: 1 });
+                await next({ transform: 'scale(1)', opacity: 0.8 });
+            }
+        },
+        from: { transform: 'scale(1)', opacity: 0.8 },
+        config: { tension: 120, friction: 14 }
+    });
 
-  export default MyAvatar; 
+    return (
+        <animated.div
+            ref={avatarRef}
+            style={{
+                ...animationProps,
+                willChange: 'transform, opacity',
+                display: 'inline-block',  // Ensure the div is only as big as the content
+                cursor: 'pointer'         // Change cursor to indicate interactivity
+            }}
+        >
+            <Image src={Pointer} alt="Pointer Icon" width={200} height={100} />
+        </animated.div>
+    );
+};
+
+export default MyPointer;

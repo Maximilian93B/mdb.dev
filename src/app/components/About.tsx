@@ -7,7 +7,6 @@ import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, Dr
 
 
 
-
 const About: React.FC = () => {
   // Refs for each element
   const headerRef = useRef<HTMLHeadingElement>(null);
@@ -23,7 +22,7 @@ const About: React.FC = () => {
 
   return (
     <section className='section' id='about'>
-      <animated.h1 ref={headerRef} style={headerStyles}>Why Build this ?</animated.h1>
+      <animated.h1 ref={headerRef} style={headerStyles}>Learn About Me</animated.h1>
       <animated.p ref={subheaderRef} style={subheaderStyles} className='about-p'> 
       As a Full Stack Developer, I am always trying to learn and improve & NextJS is #1 on my list. Building a portfolio seemed like the right thing to do start. 
       </animated.p>
