@@ -47,15 +47,15 @@ const Landing: React.FC = () => {
                 </h1>
 
                 <p style={{ fontSize: '38px',  fontWeight: '700', display: 'flex', flexDirection:'column' }}>
-                 <AnimatedText text="Creative" color="white" delay={200} />
+                 <AnimatedText text="Creative." color="white" delay={200} />
                 </p>
                
                 <p style={{ fontSize: '38px',  fontWeight: '700', display: 'flex', flexDirection:'column' }}>
-                 <AnimatedText text="Handsome" color="white" delay={250} />
+                 <AnimatedText text="Innovative." color="white" delay={250} />
                 </p>
 
                 <p style={{ fontSize: '38px', fontWeight: '700', display: 'flex', flexDirection:'column' }}>
-                <AnimatedText text=" Smart" color="#ff3131" delay={300} />
+                <AnimatedText text= "Apps." color="#ff3131" delay={300} />
                 </p>
                 
                     

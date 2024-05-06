@@ -190,42 +190,15 @@
    
 }
 
-.carousel {
-  width: 100%;
-  height: 100%;
+
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust based on your design */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
 }
 
-.carousel-content {
-  display: flex;
-  transition: transform 0.2s ease;
-  will-change: transform;
-}
-
-.carousel-item {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-prev, .carousel-next {
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
 
 
   /* Drawer component */
