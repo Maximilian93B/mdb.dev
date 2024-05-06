@@ -12,7 +12,7 @@ const MyAvatar: React.FC = () => {
 
     return ( 
         <animated.div>
-        <Image src={Avatar} alt='Avatar Picture'></Image>
+        <Image src={Avatar} alt='Avatar Picture' width={600} height={100}></Image>
         </animated.div>
     );
 };

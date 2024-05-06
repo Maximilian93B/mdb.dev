@@ -24,6 +24,7 @@ const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay:
     <section id="skills">
       <animated.h1 ref={headerRef} style={headerStyles}>Thanks for stoping By!</animated.h1>
       <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Really...</animated.p>
+   
     </section>
   );
 };

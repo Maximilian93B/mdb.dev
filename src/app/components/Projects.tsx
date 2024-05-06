@@ -29,31 +29,32 @@ const headerStyles = useFadeInAnimation({ isVisible: headerVisible, delay: 300 }
 const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay: 600 });
 
   return (
-    <section id="projects">
-     <animated.h1 ref={headerRef} style={headerStyles}> Explore my Apps & Projects </animated.h1>
-      <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Code,Code,Code</animated.p>
-    
-      <Carousel className='carousel'>
-      <CarouselContent className='carousel-content'>
-        <CarouselItem className='carousel-item'>
-          <ProjectCards/>
-        </CarouselItem>
-        <CarouselItem className='carousel-item'>
-        <ProjectCards/>
-        </CarouselItem>
-        <CarouselItem className='carousel-item'>
-        <ProjectCards/>
-        </CarouselItem>
-      </CarouselContent>
-        <CarouselPrevious className='carousel-prev'/>
-        <CarouselNext className='carousel-next'/>
-      </Carousel>
-
-    
-    
-
-    </section>
-  );
+    <section className='section' id="projects">
+    <div className='columns-container'>
+      <div className='column'>
+        <animated.h1 ref={headerRef} style={headerStyles}> Explore my Apps & Projects </animated.h1>
+        <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Code,Code,Code</animated.p>
+      </div>
+      <div className='column'>
+        <Carousel className='carousel'>
+          <CarouselContent className='carousel-content'>
+            <CarouselItem className='carousel-item'>
+              <ProjectCards/>
+            </CarouselItem>
+            <CarouselItem className='carousel-item'>
+              <ProjectCards/>
+            </CarouselItem>
+            <CarouselItem className='carousel-item'>
+              <ProjectCards/>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className='carousel-prev'/>
+          <CarouselNext className='carousel-next'/>
+        </Carousel>
+      </div>
+    </div>
+  </section>
+);
 };
 
 export default Projects;

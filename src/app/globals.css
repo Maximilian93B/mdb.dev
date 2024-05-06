@@ -98,15 +98,20 @@
     section {
       display: flex;
       flex-direction: row;
-      justify-content: center; /* Align content to start of the container */
-      align-items: flex-start; /* Center content horizontally */
-      text-align: center; /* Ensure text within the elements is centered */
+      justify-content: center; /* Center content horizontally */
+      align-items: flex-start; /* Align content to start of the container */
       height: 100vh;
       margin-top: 10rem;
-      margin-left: 10rem;
       padding: 0;
       width: 100%; /* Ensures it fills the layer width */
       overflow: hidden; /* Optional, prevents scroll within the section */
+    }
+    .columns-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px; /* Adjust as needed */
+      width: 100%;
+      padding: 0 20px; /* Adjust as needed */
     }
     .column {
       flex: 1; /* Ensures each column takes up an equal amount of space */
@@ -117,6 +122,7 @@
       padding: 2rem; /* Optional, adds some padding inside each column */
     }
   }
+  
   
   .background-style {
     width: 100%;
@@ -184,64 +190,42 @@
    
 }
 
-  
-  /* Project Section Styles */
-  #projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+.carousel {
+  width: 100%;
+  height: 100%;
+}
 
-  .carousel {
-    position: relative;
-    width: 50%; /* Full width of the parent container */
-    top: 5%;
-    overflow: hidden; /* Hides anything outside this container */
-  }
-
-  /* Carousel content styles */
 .carousel-content {
-  display: flex; /* Aligns children (CarouselItem) in a row */
-  transition: transform 0.2s ease; /* Smooth transition for sliding effect */
-  will-change: transform; /* Optimizes animations */
-}
-
-/* Individual carousel item styles */
-.carousel-item {
-  width: 100%; /* Ensures each item takes up the full width of the carousel */
   display: flex;
-  justify-content: center; /* Center-align the cards horizontally */
-  align-items: center; /* Center-align the cards vertically */
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
-/* Navigation buttons for the carousel */
+.carousel-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .carousel-prev, .carousel-next {
-  position: absolute;
-  top: 50%; /* Centers vertically */
+  top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background-color: #fff; /* Visible against any content */
+  background-color: #fff;
   border: none;
   cursor: pointer;
   padding: 10px;
-  border-radius: 50%; /* Circular buttons */
+  border-radius: 50%;
 }
 
 .carousel-prev {
-  left: 10px; /* Positioned on the left */
+  left: 10px;
 }
 
 .carousel-next {
-  right: 10px; /* Positioned on the right */
+  right: 10px;
 }
-
-  /* Project Cards */
-  .card {
-    width: 50%;
-    height: 50vh; /* Limit card width to 90% of the carousel item to ensure padding */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Enhances visibility with a shadow */
-
-  }
 
 
   /* Drawer component */
