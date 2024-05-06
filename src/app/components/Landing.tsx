@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { animated, useSpring } from '@react-spring/web';
 import useOnScreen from '../utils/ScrollContext';
-import MyPointer from './Avatar';
+import MyPointer from './Pointer';
 import BurnButton from './BurnButton';
 // Define interface for animation styles
 interface AnimatedTextProps {
@@ -35,6 +35,7 @@ const Landing: React.FC = () => {
     }, [isVisible]);
 
     return (
+  
         <div ref={ref} className={`landing ${isVisible ? 'fade-in' : ''}`} style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: 1, textAlign: 'right', marginRight: '40%',display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end' }}>
                 <h1 style={{ fontSize: '58px', fontWeight: '800', color: 'white' }}>
@@ -61,6 +62,7 @@ const Landing: React.FC = () => {
                     <div style={{ position: 'absolute', bottom:0, right: '40%' }}>
                     <MyPointer/>
                     </div>
+
             </div>
         </div>
     );

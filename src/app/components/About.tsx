@@ -2,8 +2,7 @@ import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
-import { Button } from "@/components/ui/button"
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger,} from "@/components/ui/drawer"
+import MyAvatar from './Avatar';
 
 
 
@@ -22,25 +21,16 @@ const About: React.FC = () => {
 
   return (
     <section className='section' id='about'>
+      <div className='column'>
       <animated.h1 ref={headerRef} style={headerStyles}>Learn About Me</animated.h1>
       <animated.p ref={subheaderRef} style={subheaderStyles} className='about-p'> 
-      As a Full Stack Developer, I am always trying to learn and improve & NextJS is #1 on my list. Building a portfolio seemed like the right thing to do start. 
+      Hey, I'm Max, a full-stack developer with a passion for bringing creative, immersive, and responsive web and mobile environments to life. I love all aspects of web development, from frontend design to backend infrastructure. I really enjoy figuring out ways to present data to users in order to provide the best web experience possible. I have traveled the world and experienced many different cultures and values, and it has helped mold me into the developer I am today. Thanks for stopping by my profile. Have a nice day!
+      Max.
       </animated.p>
-      {/*Drawer component */}
-      <Drawer>
-      <DrawerTrigger className="drawer-trigger">Try Me</DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>This is called a drawer component</DrawerTitle>
-          <DrawerDescription>Something here</DrawerDescription>
-        </DrawerHeader>
-        <DrawerFooter>
-          <DrawerClose>
-            <Button variant="outline">Close Me</Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+      </div>
+      <div className='column'>
+        < MyAvatar/>
+    </div>
     </section>
   );
 };
