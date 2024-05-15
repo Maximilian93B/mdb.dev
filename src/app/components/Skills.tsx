@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
-
+import Terminal from './Terminal';
 
 const Skills: React.FC = () => {
 
@@ -24,7 +24,11 @@ const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay:
     <section id="skills">
       <animated.h1 ref={headerRef} style={headerStyles}>Thanks for stoping By!</animated.h1>
       <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Really...</animated.p>
-   
+
+    <div className='flex items-center'>
+      <Terminal />
+    </div>
+    
     </section>
   );
 };

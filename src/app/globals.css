@@ -256,3 +256,37 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .terminal {
+    background-color: black;
+    color: green;
+    padding: 20px;
+    font-family: monospace;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .output {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+  }
+  
+  .form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .prompt {
+    margin-right: 10px;
+  }
+  
+  .input {
+    background: none;
+    border: none;
+    outline: none;
+    color: green;
+    font-family: monospace;
+    width: 100%;
+  }

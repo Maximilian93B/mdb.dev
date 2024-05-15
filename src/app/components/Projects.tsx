@@ -39,14 +39,22 @@ const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay:
           hoverTriggerWidth={300}  // Example width
           hoverTriggerHeight={100} // Example height
           />
-              <ProjectCards
+        <ProjectCards
+          svgImage=""
+          title="Second Project"
+          description="This is a description of the first project."
+          hoverTriggerImg=""
+          hoverTriggerWidth={300}  // Example width
+          hoverTriggerHeight={100} // Example height   
+        />
+        <ProjectCards
           svgImage=""
           title="Second Project"
           description="This is a description of the first project."
           hoverTriggerImg=""
           hoverTriggerWidth={300}  // Example width
           hoverTriggerHeight={100} // Example height
-        />
+          />
       </div>
       </div>
     </div>
