@@ -28,8 +28,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-      <div className="w-full max-w-4xl h-full max-h-4xl p-4">
-        <button onClick={onClose} className="absolute top-0 right-0 p-4 text-white">
+      <div className="w-full max-w-2xl h-full max-h-2xl p-4">
+        <button onClick={onClose} className="relative top-0 right-0 p-4 text-white">
           Close
         </button>
         {children}
