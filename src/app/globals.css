@@ -1,149 +1,148 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 20 14.3% 4.1%;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
 
-      --primary: 24 9.8% 10%;
-      --primary-foreground: 60 9.1% 97.8%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
 
-      --secondary: 60 4.8% 95.9%;
-      --secondary-foreground: 24 9.8% 10%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
 
-      --muted: 60 4.8% 95.9%;
-      --muted-foreground: 25 5.3% 44.7%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
 
-      --accent: 60 4.8% 95.9%;
-      --accent-foreground: 24 9.8% 10%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 60 9.1% 97.8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
 
-      --border: 20 5.9% 90%;
-      --input: 20 5.9% 90%;
-      --ring: 20 14.3% 4.1%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
 
-      --radius: 0.5rem;
-
-    }
-
-    .dark {
-      --background: 20 14.3% 4.1%;
-      --foreground: 60 9.1% 97.8%;
-
-      --card: 20 14.3% 4.1%;
-      --card-foreground: 60 9.1% 97.8%;
-
-      --popover: 20 14.3% 4.1%;
-      --popover-foreground: 60 9.1% 97.8%;
-
-      --primary: 60 9.1% 97.8%;
-      --primary-foreground: 24 9.8% 10%;
-
-      --secondary: 12 6.5% 15.1%;
-      --secondary-foreground: 60 9.1% 97.8%;
-
-      --muted: 12 6.5% 15.1%;
-      --muted-foreground: 24 5.4% 63.9%;
-
-      --accent: 12 6.5% 15.1%;
-      --accent-foreground: 60 9.1% 97.8%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 60 9.1% 97.8%;
-
-      --border: 12 6.5% 15.1%;
-      --input: 12 6.5% 15.1%;
-      --ring: 24 5.7% 82.9%;
-    }
+    --radius: 0.5rem;
   }
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
   }
-  
-  
-  @layer utilities {
-    .full-vh {
-      min-height: 100vh; /* Ensures each section takes at least the height of the viewport */
-    }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  body {
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .full-vh {
+    min-height: 100vh; /* Ensures each section takes at least the height of the viewport */
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to start of the container */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+}
+
+@layer components {
+  section {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to start of the container */
-    align-items: center; /* Center content horizontally */
-    text-align: center; 
+    flex-direction: row;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align content to start of the container */
+    height: 100vh;
+    margin-top: 10rem;
+    padding: 0;
+    width: 100%; /* Ensures it fills the layer width */
+    overflow: hidden; /* Optional, prevents scroll within the section */
   }
-  
-  
-  @layer components {
-    section {
-      display: flex;
-      flex-direction: row;
-      justify-content: center; /* Center content horizontally */
-      align-items: flex-start; /* Align content to start of the container */
-      height: 100vh;
-      margin-top: 10rem;
-      padding: 0;
-      width: 100%; /* Ensures it fills the layer width */
-      overflow: hidden; /* Optional, prevents scroll within the section */
-    }
-    .columns-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px; /* Adjust as needed */
-      width: 100%;
-      padding: 0 20px; /* Adjust as needed */
-    }
-    .column {
-      flex: 1; /* Ensures each column takes up an equal amount of space */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem; /* Optional, adds some padding inside each column */
-    }
-  }
-  
-  
-  .background-style {
+  .columns-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px; /* Adjust as needed */
     width: 100%;
-    height: 100%;
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0 20px; /* Adjust as needed */
   }
-  
-  /* Landing Styles */
-  .landing {
+  .column {
+    flex: 1; /* Ensures each column takes up an equal amount of space */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to start of the container */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Ensure text within the elements is centered */
-    text-align: center;
-    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Optional, adds some padding inside each column */
   }
+}
 
- /* globals.css */
+.background-style {
+  width: 100%;
+  height: 100%;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Landing Styles */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align content to start of the container */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Ensure text within the elements is centered */
+  text-align: center;
+  margin-top: 5rem;
+  padding: 1rem 0;
+}
+
+/* globals.css */
 .navbar-logo {
   height: 300px;
   width: auto;
@@ -167,30 +166,27 @@
   transform: scale(1.2); /* Scale the button up to 110% of its original size */
 }
 
-  h1 {
-    color: white; /* Sets the text color to white */
-    font-size: 4rem; /* Sets a larger font size */
-    font-weight: 700; /* Makes the font bold */
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds shadow for better readability */
-    text-align: center; /* Centers the text */
-    margin-bottom: 1rem; /* Adds space below the h1 */
-  }
-  
-  .about-p {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%; /* Adjusted to take full width of the parent column */
-    color: white;
-    font-size: 2rem;
-    font-weight: 500;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-top: 1vh;
-   
+h1 {
+  color: white; /* Sets the text color to white */
+  font-size: 4rem; /* Sets a larger font size */
+  font-weight: 700; /* Makes the font bold */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds shadow for better readability */
+  text-align: center; /* Centers the text */
+  margin-bottom: 1rem; /* Adds space below the h1 */
 }
 
-
+.about-p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%; /* Adjusted to take full width of the parent column */
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 1vh;
+}
 
 .project-container {
   display: grid;
@@ -199,24 +195,22 @@
   padding: 20px; /* Padding around the container */
 }
 
+/* Drawer component */
+.drawer-trigger {
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
 
+.drawer-trigger:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+}
 
-  /* Drawer component */
-  .drawer-trigger {
-    background-color: #007BFF; /* Blue background */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px; /* Rounded corners */
-  }
-  
-  .drawer-trigger:hover {
-    background-color: #0056b3; /* Darker shade of blue */
-  }
-  
-  /* global.css */
+/* global.css */
 .button {
   background-color: #4CAF50; /* Green background */
   border: none;
@@ -236,57 +230,26 @@
   background-color: #45a049; /* Darker shade of green */
 }
 
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-
-  .fade-in {
-    animation: fadeIn 1s forwards;
+@layer base {
+  * {
+    @apply border-border;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  body {
+    @apply bg-background text-foreground;
   }
-
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
-  }
-
-  .terminal {
-    background-color: black;
-    color: green;
-    padding: 20px;
-    font-family: monospace;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .output {
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-  }
-  
-  .form {
-    display: flex;
-    align-items: center;
-  }
-  
-  .prompt {
-    margin-right: 10px;
-  }
-  
-  .input {
-    background: none;
-    border: none;
-    outline: none;
-    color: green;
-    font-family: monospace;
-    width: 100%;
-  }
+}
