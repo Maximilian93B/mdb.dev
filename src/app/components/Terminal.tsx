@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import AnimatedLine from './AnimatedTerminalLine';
 
@@ -31,6 +31,7 @@ const Terminal: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [output, setOutput] = useState<string[]>([]);
   const [currentPath, setCurrentPath] = useState<string[]>(['home']);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const getCurrentDirectory = (path: string[]): FileSystem | string | undefined => {
     return path.reduce((dir, subPath) => {
@@ -93,14 +94,22 @@ const Terminal: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    handleCommand(input);
-    setInput('');
+    if (input.trim()) {
+      handleCommand(input);
+      setInput('');
+    }
   };
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [output]);
+
   return (
-    <section id="terminal" className="p-4">
-      <div className="bg-black text-green-500 p-4 rounded-md font-mono max-w-3xl mx-auto">
-        <div className="mb-4">
+    <section id="terminal" className="h-full w-full p-4">
+      <div className="bg-black text-green-500 p-4 rounded-md font-mono w-full h-full flex flex-col">
+        <div className="mb-4 flex-grow overflow-auto">
           {output.map((line, index) => (
             <AnimatedLine key={index} line={line} />
           ))}
@@ -108,6 +117,7 @@ const Terminal: React.FC = () => {
         <form onSubmit={handleSubmit} className="flex items-center">
           <span className="mr-2">{currentPath.join('/')}$</span>
           <input
+            ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -119,5 +129,6 @@ const Terminal: React.FC = () => {
     </section>
   );
 };
+
 
 export default Terminal;

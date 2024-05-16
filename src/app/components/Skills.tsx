@@ -1,11 +1,15 @@
+// Skills.tsx
 'use client';
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
 import Terminal from './Terminal';
+import Modal from './Modal';
 
 const Skills: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Refs for each element
   const headerRef = useRef<HTMLHeadingElement>(null);
   const subheaderRef = useRef<HTMLParagraphElement>(null);
@@ -16,17 +20,24 @@ const Skills: React.FC = () => {
 
   // Animation styles for each element
   const headerStyles = useFadeInAnimation({ isVisible: headerVisible, delay: 300 });
-  const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay: 600 });
+
 
   return (
-    <section id="skills" className="p-8">
+    <section id="skills" className="p-4">
       <animated.h1 ref={headerRef} style={headerStyles}>
-        Thanks for stopping By!
+        My Terminal
       </animated.h1>
-      <animated.p ref={subheaderRef} style={subheaderStyles} className="subheader">
-        Really...
-      </animated.p>
-      <Terminal />
+     
+      
+      <div className='flex  flex-col items-center'>
+      <button onClick={() => setIsModalOpen(true)} className="mt-4 p-2 bg-blue-500 text-white rounded">
+        Open Terminal
+      </button>
+      </div>
+      
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <Terminal />
+      </Modal>
     </section>
   );
 };
