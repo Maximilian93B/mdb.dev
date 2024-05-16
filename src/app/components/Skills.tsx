@@ -14,42 +14,47 @@ const Skills: React.FC = () => {
   const header1Ref = useRef<HTMLHeadingElement>(null);
   const header2Ref = useRef<HTMLHeadingElement>(null);
   const header3Ref = useRef<HTMLHeadingElement>(null);
+const mainHeaderRef = useRef<HTMLHeadingElement>(null);
 
   // Visibility states for each element
+  const mainHeaderVisible = useOnScreen(mainHeaderRef)
   const header1Visible = useOnScreen(header1Ref);
   const header2Visible = useOnScreen(header2Ref);
   const header3Visible = useOnScreen(header3Ref);
 
  // Animation styles for each element
+  const mainHeaderStyles = useFadeInAnimation({ isVisible: mainHeaderVisible, delay: 200})
  const header1Styles = useFadeInAnimation({ isVisible: header1Visible, delay: 300 });
  const header2Styles = useFadeInAnimation({ isVisible: header2Visible, delay: 600 });
  const header3Styles = useFadeInAnimation({ isVisible: header3Visible, delay: 900 });
 
 
+ 
  return (
   <section id="skills" className="p-4 flex flex-col items-center">
-    <div className="flex flex-col items-center w-full max-w-2xl p-4">
-    {/* Terminal Feature */}
+    <animated.h1 ref={mainHeaderRef} style={mainHeaderStyles} className="text-6xl font-bold mb-12">
+      My Skills and Features
+    </animated.h1>
+    <div className="flex flex-col items-center w-full max-w-4xl p-4">
       <div className="flex justify-between items-center w-full mb-8">
         <div className="flex flex-col">
           <animated.h1 ref={header1Ref} style={header1Styles} className="text-4xl font-bold">
-             My Terminal
+            Terminal
           </animated.h1>
-          <animated.p ref={header1Ref} style={header1Styles} className="text-lg mt-2">
-          Description for feature 2
+          <animated.p ref={header1Ref} style={header1Styles} className="text-2xl mt-2">
+          Description for feature 1
           </animated.p>
         </div>
         <button onClick={() => setIsModalOpen(true)} className="p-2 bg-blue-500 text-white rounded">
           Open Terminal
         </button>
       </div>
-      {/* 3JS Feature */}
       <div className="flex justify-between items-center w-full mb-8">
         <div className="flex flex-col">
           <animated.h1 ref={header2Ref} style={header2Styles} className="text-4xl font-bold">
-            Feature 2
+            Enter 3JS
           </animated.h1>
-          <animated.p ref={header2Ref} style={header2Styles} className="text-lg mt-2">
+          <animated.p ref={header2Ref} style={header2Styles} className="text-2xl mt-2">
             Description for feature 2
           </animated.p>
         </div>
@@ -57,14 +62,12 @@ const Skills: React.FC = () => {
           Activate Feature 2
         </button>
       </div>
-     
-     {/* Unkown Feature  Possibly Burn Button?? */}
       <div className="flex justify-between items-center w-full mb-8">
         <div className="flex flex-col">
           <animated.h1 ref={header3Ref} style={header3Styles} className="text-4xl font-bold">
             Feature 3
           </animated.h1>
-          <animated.p ref={header3Ref} style={header3Styles} className="text-lg mt-2">
+          <animated.p ref={header3Ref} style={header3Styles} className="text-2xl mt-2">
             Description for feature 3
           </animated.p>
         </div>
@@ -78,6 +81,6 @@ const Skills: React.FC = () => {
     </Modal>
   </section>
 );
-};
+}
 
 export default Skills;
