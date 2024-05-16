@@ -3,7 +3,14 @@ import { useSpring, animated } from 'react-spring';
 import Image from 'next/image';
 import Pointer from '../../../public/Pointer.svg';
 
-const MyPointer: React.FC = () => {
+interface MyPointerProps {
+    onClick: () => void;
+}
+
+
+
+
+const MyPointer: React.FC<MyPointerProps> = ({ onClick }) => {
     const avatarRef = useRef<HTMLDivElement>(null);
 
     // Bounce animation using useSpring
@@ -27,6 +34,7 @@ const MyPointer: React.FC = () => {
                 display: 'inline-block',  // Ensure the div is only as big as the content
                 cursor: 'pointer'         // Change cursor to indicate interactivity
             }}
+            onClick={onClick}
         >
             <Image src={Pointer} alt="Pointer Icon" width={200} height={100} />
         </animated.div>

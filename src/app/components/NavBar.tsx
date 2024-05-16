@@ -17,6 +17,11 @@ const NavBar: React.FC<{ scrollTo: (offset: number) => void }> = ({ scrollTo }) 
           <img src="/Logo.svg" alt="Company Logo" className='navbar-logo' onClick={() => scrollTo(0)}/>
     
         <div style={{ display: 'flex', gap: '20px', marginLeft: 'auto' }}>
+       
+       <button className="navbar-button" onClick={() => scrollTo(0)}>
+        Home
+        </button>
+       
         <button className="navbar-button" onClick={() => scrollTo(1)}>
             About
         </button>

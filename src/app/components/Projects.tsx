@@ -4,15 +4,8 @@ import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
 import ProjectCards from './Card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 
-
+import projectImage1 from '../../../public/Logo.svg'
 
 
 const Projects: React.FC = () => {
@@ -29,31 +22,44 @@ const headerStyles = useFadeInAnimation({ isVisible: headerVisible, delay: 300 }
 const subheaderStyles = useFadeInAnimation({ isVisible: subheaderVisible, delay: 600 });
 
   return (
-    <section id="projects">
-     <animated.h1 ref={headerRef} style={headerStyles}> Explore my Apps & Projects </animated.h1>
-      <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Code,Code,Code</animated.p>
-    
-      <Carousel className='carousel'>
-      <CarouselContent className='carousel-content'>
-        <CarouselItem className='carousel-item'>
-          <ProjectCards/>
-        </CarouselItem>
-        <CarouselItem className='carousel-item'>
-        <ProjectCards/>
-        </CarouselItem>
-        <CarouselItem className='carousel-item'>
-        <ProjectCards/>
-        </CarouselItem>
-      </CarouselContent>
-        <CarouselPrevious className='carousel-prev'/>
-        <CarouselNext className='carousel-next'/>
-      </Carousel>
+    <section className='section' id="projects">
+    <div className='columns-container'>
+      <div className='column'>
+        <animated.h1 ref={headerRef} style={headerStyles}> Explore my Apps & Projects </animated.h1>
+        <animated.p ref={subheaderRef} style={subheaderStyles} className='subheader'>Code,Code,Code</animated.p>
+      </div>
 
-    
-    
-
-    </section>
-  );
+      <div className='column'>
+        <div className='project-container'>
+        <ProjectCards
+          svgImage={''}
+          title="First Project"
+          description="This is a description of the first project."
+          hoverTriggerImg={''}
+          hoverTriggerWidth={300}  // Example width
+          hoverTriggerHeight={100} // Example height
+          />
+        <ProjectCards
+          svgImage=""
+          title="Second Project"
+          description="This is a description of the first project."
+          hoverTriggerImg=""
+          hoverTriggerWidth={300}  // Example width
+          hoverTriggerHeight={100} // Example height   
+        />
+        <ProjectCards
+          svgImage=""
+          title="Second Project"
+          description="This is a description of the first project."
+          hoverTriggerImg=""
+          hoverTriggerWidth={300}  // Example width
+          hoverTriggerHeight={100} // Example height
+          />
+      </div>
+      </div>
+    </div>
+  </section>
+);
 };
 
 export default Projects;
