@@ -1,86 +1,73 @@
-// Skills.tsx
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import useOnScreen from '../utils/ScrollContext';
 import { useFadeInAnimation } from '../utils/useFadeAnimation';
-import Terminal from './Terminal';
-import Modal from './Modal';
+import { FaReact, FaPython, FaNodeJs, FaGitAlt, FaJsSquare } from 'react-icons/fa';
+import { SiTypescript, SiDjango, SiGraphql, SiGnubash } from 'react-icons/si';
 
 const Skills: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Refs for each element
-  const header1Ref = useRef<HTMLHeadingElement>(null);
-  const header2Ref = useRef<HTMLHeadingElement>(null);
-  const header3Ref = useRef<HTMLHeadingElement>(null);
-const mainHeaderRef = useRef<HTMLHeadingElement>(null);
+  // Refs for header
+  const mainHeaderRef = useRef<HTMLHeadingElement>(null);
 
   // Visibility states for each element
-  const mainHeaderVisible = useOnScreen(mainHeaderRef)
-  const header1Visible = useOnScreen(header1Ref);
-  const header2Visible = useOnScreen(header2Ref);
-  const header3Visible = useOnScreen(header3Ref);
-
- // Animation styles for each element
-  const mainHeaderStyles = useFadeInAnimation({ isVisible: mainHeaderVisible, delay: 200})
- const header1Styles = useFadeInAnimation({ isVisible: header1Visible, delay: 300 });
- const header2Styles = useFadeInAnimation({ isVisible: header2Visible, delay: 600 });
- const header3Styles = useFadeInAnimation({ isVisible: header3Visible, delay: 900 });
+  const mainHeaderVisible = useOnScreen(mainHeaderRef);
 
 
- 
- return (
-  <section id="skills" className="p-4 flex flex-col items-center">
-    <animated.h1 ref={mainHeaderRef} style={mainHeaderStyles} className="text-6xl font-bold mb-12">
-      My Skills and Features
-    </animated.h1>
-    <div className="flex flex-col items-center w-full max-w-4xl p-4">
-      <div className="flex justify-between items-center w-full mb-8">
-        <div className="flex flex-col">
-          <animated.h1 ref={header1Ref} style={header1Styles} className="text-4xl font-bold">
-            Terminal
-          </animated.h1>
-          <animated.p ref={header1Ref} style={header1Styles} className="text-2xl mt-2">
-          Description for feature 1
-          </animated.p>
-        </div>
-        <button onClick={() => setIsModalOpen(true)} className="p-2 bg-blue-500 text-white rounded">
-          Open Terminal
-        </button>
+  // Animation styles for each element
+  const mainHeaderStyles = useFadeInAnimation({ isVisible: mainHeaderVisible, delay: 200 });
+
+  // Array of skill symbols (replace with actual icons or text)
+  const skills = [
+    { icon: <FaReact />, name: 'React' },
+    { icon: <FaPython />, name: 'Python' },
+    { icon: <SiTypescript />, name: 'TypeScript' },
+    { icon: <FaNodeJs />, name: 'Node.js' },
+    { icon: <SiDjango />, name: 'Django' },
+    { icon: <FaJsSquare />, name: 'JavaScript' },
+    { icon: <SiGraphql />, name: 'GraphQL' },
+    { icon: <SiGnubash />, name: 'Bash' },
+    { icon: <FaGitAlt />, name: 'Git' }
+  ];
+
+
+  return (
+    <section id="skills" className="p-4 flex flex-col items-center">
+      <style jsx>{`
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+
+        .bounce {
+          display: inline-block;
+          animation: bounce 2s infinite;
+        }
+
+        .skills-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+
+      `}</style>
+      <animated.h1 ref={mainHeaderRef} style={mainHeaderStyles} className="ext-6xl font-bold flex flex-col justify-center mt-8 mb-20 ">
+        Skills 
+      </animated.h1>
+      <div className="skills-container">
+        {skills.map((skill, index) => (
+          <div key={index} className="bounce text-4xl flex flex-col items-center mt-12">
+            {skill.icon}
+            <span className="text-md mt-2 text-white">{skill.name}</span>
+          </div>
+        ))}
       </div>
-      <div className="flex justify-between items-center w-full mb-8">
-        <div className="flex flex-col">
-          <animated.h1 ref={header2Ref} style={header2Styles} className="text-4xl font-bold">
-            Enter 3JS
-          </animated.h1>
-          <animated.p ref={header2Ref} style={header2Styles} className="text-2xl mt-2">
-            Description for feature 2
-          </animated.p>
-        </div>
-        <button onClick={() => alert('Feature 2 action')} className="p-2 bg-green-500 text-white rounded">
-          Activate Feature 2
-        </button>
-      </div>
-      <div className="flex justify-between items-center w-full mb-8">
-        <div className="flex flex-col">
-          <animated.h1 ref={header3Ref} style={header3Styles} className="text-4xl font-bold">
-            Feature 3
-          </animated.h1>
-          <animated.p ref={header3Ref} style={header3Styles} className="text-2xl mt-2">
-            Description for feature 3
-          </animated.p>
-        </div>
-        <button onClick={() => alert('Feature 3 action')} className="p-2 bg-red-500 text-white rounded">
-          Activate Feature 3
-        </button>
-      </div>
-    </div>
-    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-      <Terminal />
-    </Modal>
-  </section>
-);
+    </section>
+  );
 }
 
 export default Skills;
